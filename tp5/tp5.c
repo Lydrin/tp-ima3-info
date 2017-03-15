@@ -70,6 +70,15 @@ bool est_trie(Cellule *l){
     return true;
 }
 
+void supprimer_liste(Cellule **l){
+    if(*l==NULL){
+        return;
+    }
+    supprimer_tete(l);
+    supprimer_liste(l);
+}
+
+
 int main(int argc, char *argv[]){
     Cellule *l=(Cellule *)malloc(sizeof(Cellule));
     if(argc == 2){
@@ -79,5 +88,7 @@ int main(int argc, char *argv[]){
     }
     imprimer(l);
     printf("%d\n",est_trie(l));
+    supprimer_liste(&l);
+    imprimer(l);
     return 0;
 }
