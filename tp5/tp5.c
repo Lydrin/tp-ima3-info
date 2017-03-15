@@ -78,6 +78,19 @@ void supprimer_liste(Cellule **l){
     supprimer_liste(l);
 }
 
+int recher_mult(Cellule *l, int val){
+    if(l==NULL|| l->entier > val){
+        return 0;
+    }
+    if(l->entier==val){
+        return l->multiplicite;
+    }
+    return recher_mult(l->suiv,val);
+}
+
+int cardinal(Cellule *l){
+
+}
 
 int main(int argc, char *argv[]){
     Cellule *l=(Cellule *)malloc(sizeof(Cellule));
@@ -88,6 +101,7 @@ int main(int argc, char *argv[]){
     }
     imprimer(l);
     printf("%d\n",est_trie(l));
+    printf("%d\n",recher_mult(l,465));
     supprimer_liste(&l);
     imprimer(l);
     return 0;
