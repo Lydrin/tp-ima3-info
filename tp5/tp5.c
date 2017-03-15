@@ -66,8 +66,7 @@ bool est_trie(Cellule *l){
     if(l->entier > l->suiv->entier){
         return false;
     }
-    est_trie(l->suiv);
-    return true;
+    return est_trie(l->suiv);
 }
 
 void supprimer_liste(Cellule **l){
@@ -89,6 +88,10 @@ int recher_mult(Cellule *l, int val){
 }
 
 int cardinal(Cellule *l){
+    if(l==NULL){
+        return 0;
+    }
+    return recher_mult(l,l->entier) + cardinal(l->suiv);
 
 }
 
@@ -101,7 +104,8 @@ int main(int argc, char *argv[]){
     }
     imprimer(l);
     printf("%d\n",est_trie(l));
-    printf("%d\n",recher_mult(l,465));
+    printf("%d\n",recher_mult(l,12));
+    printf("%d\n",cardinal(l));
     supprimer_liste(&l);
     imprimer(l);
     return 0;
