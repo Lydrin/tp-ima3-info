@@ -9,9 +9,9 @@ int main (void)
     int *tab;
     int i;
 
-    tab = malloc (SIZE * sizeof(int));
+    tab = (int *)malloc (SIZE * sizeof(int));
 
-    if ((tab = NULL)) {
+    if (tab == NULL) {
         perror ("malloc()");
         exit (-1);
     }

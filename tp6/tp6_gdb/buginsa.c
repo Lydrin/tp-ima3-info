@@ -10,7 +10,7 @@ void place( int *t, int i, int j)
 
 void traitement( int  n )
 { int *t;
-  unsigned int i;
+  int i;
   t = (int*) malloc(n * sizeof(int ));
   for( i = n-1; i >= 0 ; i--)
       place( t, i  , i*i ) ;
@@ -22,7 +22,6 @@ int main ( int argc, char *argv[] )
   
   if (argc == 2)
     {n = atoi( argv[1] ); 
-      printf("\nbug du -1\n");
       traitement( n );
       printf("done...\n");
     }

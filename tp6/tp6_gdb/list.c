@@ -19,6 +19,7 @@ void insertinList(Liste* mylist, int el)
 {
   Cell* newCell=(Cell*) malloc(sizeof(Cell));
   newCell->key=el;
+  newCell->nextC = *mylist;
   *mylist=newCell;
 }
 
@@ -31,6 +32,7 @@ void printList(Liste mylist)
     {
       printf("%d",p->key);
       if (p->nextC!=NULL) printf(",");
+      p = p->nextC;
     }
   printf("]\n");
 }

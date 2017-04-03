@@ -12,7 +12,7 @@ int main()
     for(j=10; j>0;j--)
       for(k=0; k<i;k++)
 	for(l=10; l>j; l--)
-	  for(m=10; m<k; m--)
+	  for(m=10; m>k; m--)
 	    for(n=10; n>0; n--)
 	      compteur++;
 

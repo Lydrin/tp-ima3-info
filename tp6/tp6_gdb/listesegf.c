@@ -35,7 +35,7 @@ void imprimeListe(Liste l)
 
 int main(){
   Liste maliste;
-
+  maliste = NULL;
   insereEnTete(&maliste,4);
   insereEnTete(&maliste,42);
   insereEnTete(&maliste,2);
